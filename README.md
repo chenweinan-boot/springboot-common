@@ -163,7 +163,7 @@ some simple spring boot demos which Contains 170 usage scenarios, the code is re
 | 149           | License               | Spring Boot implements License generation and verification                                    | [CN](http://www.harries.blog/archives/711280.html) / [EN](https://jxausea.medium.com/license) |
 | 150           | file                  | Spring Boot implements file upload and download                                               | [CN](http://www.harries.blog/archives/711291.html) / [EN](https://jxausea.medium.com/file-upload) |
 
-##中文说明
+##中文说明用途
 数据库与持久化 (Database & Persistence)
 2 redis：内存高速缓存/键值存储，常用于高并发场景下的数据缓存、分布式锁和计数器。
 
