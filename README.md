@@ -164,98 +164,295 @@ some simple spring boot demos which Contains 170 usage scenarios, the code is re
 | 150           | file                  | Spring Boot implements file upload and download                                               | [CN](http://www.harries.blog/archives/711291.html) / [EN](https://jxausea.medium.com/file-upload) |
 
 ##中文说明
-1. 数据库与数据持久化（Data & Storage）
-用于数据的存储、查询、事务及数据库版本管理。
+数据库与持久化 (Database & Persistence)
+2 redis：内存高速缓存/键值存储，常用于高并发场景下的数据缓存、分布式锁和计数器。
 
-关系型数据库/ORM：MySQL、JPA、MyBatis-Plus、HANA、TiDB（分布式数据库）。
+4 mysql：最流行的关系型数据库，用于核心业务数据的结构化持久化存储。
 
-分库分表与多数据源：Dynamic-Datasource（动态数据源）、Sharding-JDBC（分库分表）。
+9 mongodb：文档型 NoSQL 数据库，适合存储 JSON 格式的非结构化/半结构化数据。
 
-数据迁移与变更：Flyway、Liquibase（数据库版本控制）、Debezium、Canal（数据变更 CDC 捕获/增量同步）。
+19 neo4j：图形数据库，专门用于存储和查询复杂节点关系（如社交关系、知识图谱）。
 
-图数据库/数据分析：Neo4j（知识图谱/关系图）、StarRocks、Kudu、Impala（大数据/OLAP 查询）。
+25 jpa：Java 官方持久化规范（使用 Hibernate 实现），提供面向对象的数据库 ORM 映射和 CRUD 操作。
 
-2. 缓存与分布式内存（Caching & Data Grid）
-用于提升系统并发性能、减少数据库压力以及处理分布式会话。
+26 mybatis-plus：基于 MyBatis 的增强工具，只需简单配置即可免写 SQL 实现单表高效开发。
 
-分布式缓存/内存：Redis（最常用缓存）、Hazelcast、Geode / GemFire、Chronicle Queue（高性能日志队列）。
+33 druid：阿里开源的数据库连接池，提供强大的监控、防御 SQL 注入以及性能分析功能。
 
-Session 管理：Spring Session（实现多节点分布式登录状态共享）。
+39 dynamic-datasource：多数据源管理，支持在一套代码中动态切换不同的数据库连接。
 
-3. 消息中间件与流处理（Messaging & Streaming）
-用于解耦系统、异步处理、流量削峰及实时数据流分析。
+43 sharding-jdbc：分布式数据库中间件，提供分库分表、读写分离和分布式主键功能。
 
-消息队列（MQ）：RabbitMQ、RocketMQ、Kafka（日志与大数据流 Processing）。
+46 gemfire：内存数据网关/分布式缓存平台，适用于对数据一致性和极低延迟要求极高的大型系统。
 
-流式计算/实时处理：Flink（实时大数据分析）。
+69 postgres：功能强大且开源的对象关系型数据库，常用于复杂查询、地理空间数据和严格事务场景。
 
-4. 服务治理、微服务与网关（Microservices & Cloud Native）
-构建微服务架构核心组件。
+102 tidb：云原生分布式 SQL 数据库，支持强一致性事务和在线弹性扩缩容（HTAP）。
 
-服务注册/配置中心：Nacos、Zookeeper、Dubbo（RPC 框架）、gRPC、RMI。
+111 hana：SAP 推出的高性能内存数据库，支持实时数据分析与事务混合处理。
 
-限流/熔断/分布式事务：Sentinel（限流降级）、Resilience4J（熔断器）、Seata（分布式事务）。
+115 kudu：专为 Hadoop 生态设计的列式存储引擎，针对大规模数据的快速随机读写和分析。
 
-容器化与云原生：Docker、Kubernetes（K8s API 操作）、Spring Native（结合 GraalVM 编译为原生可执行文件，极速启动）。
+119 starrocks：新一代极速全场景 OLAP 分析型数据库，用于海量数据的实时报表与多维分析。
 
-5. 安全保障、认证与接口防护（Security & Auth）
-保障系统数据安全、接口防护及权限管控。
+127 liquibase：数据库版本控制工具，通过版本号管理 SQL 变更脚本，实现数据库结构的跨环境同步。
 
-安全认证与授权：Spring Security、Shiro、OAuth2、JWT、Google Login（第三方登录）、Google Authenticator（MFA 双因素认证）。
+129 impala：基于 Hadoop 生态的高性能交互式 SQL 分析查询引擎。
 
-接口与数据安全：HTTPS、Jasypt（配置文件加密）、Mask Data（数据脱敏）、Interface Security（接口签名/防篡改）、License（软件授权证书生成与校验）。
+数据变更、同步与大数据 (CDC, Data Sync & Big Data)
+17 flyway：数据库版本管理工具，支持自动化执行 SQL 数据库迁移与结构变更脚本。
 
-6. 系统监控、日志与运维（Observability & Ops）
-监控系统运行状态、收集日志及分析性能。
+20 flink：分布式实时流处理引擎，用于对海量流式数据进行低延迟的计算与分析。
 
-日志管理：Logback（输出彩色/格式化日志）、Syslog、Graylog（集中式日志收集）。
+54 debezium：捕获数据库变更数据（CDC）的开源平台，能实时读取数据库日志并发送到消息队列。
 
-指标监控：Prometheus（普罗米修斯指标采集）、Zipkin（链路追踪）。
+121 canal：阿里开源的 MySQL 数据库 Binlog 增量订阅&消费组件，常用于数据库到 Redis/ES 的实时同步。
 
-基准测试：JMH（Java 微基准测试）。
+消息中间件 (Messaging & Event Stream)
+7 rocketmq：阿里开源的高吞吐、低延迟分布式消息中间件，擅长顺序消息、事务消息与削峰填谷。
 
-7. 定时任务与工作流（Tasks & Workflow）
-处理周期性任务与复杂的业务流程。
+11 kafaka：高吞吐量的分布式日志订阅/发布系统，通常用于海量日志收集和实时流数据管道。
 
-定时任务：Spring Task Scheduler、Quartz、XXL-JOB（分布式任务调度）。
+28 rabbitmq：基于 AMQP 协议的经典轻量级消息队列，提供丰富的路由匹配机制和可靠性保障。
 
-工作流引擎：Activiti（审批/业务流程管理）、StateMachine（状态机管理）。
+62 Chronicle Queue：极低延迟的基于外存/文件映射的本地 Java 日志队列，专为高频交易与低时延系统设计。
 
-批处理：Spring Batch（大批量数据批处理）。
+注册中心、配置中心与 RPC (Service Governance & RPC)
+12 nacos：阿里开源的服务注册/发现中心与分布式配置中心，微服务架构的核心基础设施。
 
-8. AI、人工智能与高级计算（AI & ML & Algorithms）
-接入大模型、机器学习、图像识别及智能规划。
+35 zookeeper：经典的分布式协调服务，常用于分布式锁、配置管理以及集群节点注册。
 
-大语言模型/AI 接入：Spring AI（快速接入 OpenAI）、Qwen1.5-7B-Chat（集成通义千问等本地/云端大模型）。
+38 dubbo：高性能 Java RPC 框架，用于实现微服务之间的远程服务调用与治理。
 
-机器学习与深度学习：TensorFlow、Deeplearning4j（图像识别/数字识别）。
+73 grpc：基于 HTTP/2 和 Protobuf 的高性能跨语言 RPC 通信框架。
 
-规则引擎与求解器：Drools（业务规则引擎）、Timefold Solver（智能排课/路径规划算法）。
+76 rmi：Java 原生的远程方法调用（Remote Method Invocation）协议机制。
 
-9. 文档、文件与媒体处理（Files & Media）
-处理文件上传下载、生成各种格式文件。
+80 Olingo：Apache 提供的用于实现 OData（开放数据协议）标准的 Java 库。
 
-文件存储与传输：MinIO、FastDFS（分布式文件存储）、SFTP、JSch。
+云原生、微服务组件与分布式架构 (Cloud Native & Distributed)
+16 docker：容器化部署引擎，将应用及其依赖打包成镜像，实现跨环境快速部署。
 
-文件/文档生成与解析：EasyPOI（Excel 导入导出）、iTextPDF（HTML 转 PDF）、ZXing/QRCode（二维码生成）、Thumbnailator（图片缩放/水印）、Tika（Word 转 HTML）、Poster/easyposter（海报生成）。
+23 hazelcast：开源分布式内存数据网关，提供分布式缓存、内存集群与并发数据结构。
 
-10. Web 开发与通信（Web & Communication）
-前端渲染、长连接通信及 Web 接口交互。
+60 atomikos：分布式事务管理器，支持跨多个数据库/消息队列的 JTA/XA 两阶段提交事务。
 
-Web 通信/长连接：WebSocket、Netty、SSE（服务器发送事件）、WebRTC（实时音视频通信）。
+81 Atomix：轻量级分布式系统协调与协同框架，提供 Raft 一致性算法支持。
 
-模板引擎与 UI：Thymeleaf、FreeMarker、Vaadin、Spring Mobile。
+130 Seata：阿里开源的高性能分布式事务解决方案，提供 AT、TCC、SAGA 和 XA 等事务模式。
 
-API 增强：Swagger（API 文档）、GraphQL、ContentNegotiation（内容协商）、API Version（多版本接口管理）、GZIP（传输压缩）。
+135 sentinel：阿里开源的微服务流量控制组件，用于防刷、限流、熔断降级与系统自适应保护。
 
-11. 实用工具、开发增强与测试（Tools & DevEx）
-提高开发效率、校验数据及自动化测试。
+146 Kubernetes：云原生容器编排平台（K8s），通过 Java 客户端可使用代码管理集群中的 Pod 和 Service。
 
-代码规范与校验：Validation（参数校验）、Checkstyle、PMD、FindBug。
+监控、日志与可观测性 (Logging, Monitoring & Ops)
+8 graylog：集中式日志管理与分析平台，支持强大的日志收集、搜索与告警功能。
 
-测试框架：Unit Test（单元测试）、Testcontainers（测试容器）、JaCoCo（单测覆盖率）、Selenium / Puppeteer（UI 自动化测试与网页截图）。
+10 prometheus：云原生系统监控与时序数据库，通过 Metrics 接口采集和监控应用运行指标。
 
-开发辅助：Devtools（热重载）、Custom Starter（自定义 Spring Boot 启动器）、MapStruct（DTO/Entity 实体映射转换）、SpEL（Spring 表达式语言）、JSoup（HTML 解析）、GeoTools / Geodesy（地理信息与距离计算）。
+15 logback：Spring Boot 默认的日志输出框架，配置彩色日志可提高控制台日志的可读性。
+
+66 zipkin：分布式链路追踪系统，用于分析微服务调用链路中的请求时延和瓶颈。
+
+116 syslog：标准的系统日志协议，允许应用直接将日志推送到集中的网络日志服务器。
+
+123 jmh：Java 微基准测试套件，专门用于精准测量方法级别的代码运行性能与吞吐量。
+
+身份认证、权限与接口安全 (Authentication & Security)
+31 oauth2：开放授权标准，用于实现第三方登录、令牌颁发（Token）与跨域资源授权。
+
+34 ldap：轻量级目录访问协议，常用于企业内部员工账号的统一身份认证与单点登录。
+
+41 security：Spring 官方的安全防护框架，提供强大的用户认证、权限控制与防 Attack 机制。
+
+42 shiro：轻量级 Java 安全框架，上手简单，提供身份验证、授权、密码学和会话管理。
+
+48 Jasypt：配置文件加密库，用于加密数据库密码等敏感信息，防止明文配置泄露。
+
+58 jwt：JSON Web Token 校验工具，用于无状态登录、跨域认证与接口身份鉴权。
+
+131 ip2region：离线 IP 地址定位库，用于快速查询客户端 IP 的归属地并实现 IP 白名单/黑名单。
+
+133 Mask Data：数据脱敏技术，用于在输出日志或接口响应时自动把手机号、身份证号等敏感信息打码。
+
+138 Interface Security：接口安全机制，通过防重放、防篡改、数字签名等方案保障 API 传输安全。
+
+142 google login：集成 Google 账号进行快捷登录（OAuth 2.0 身份验证）。
+
+148 Google Authenticator：结合谷歌验证码实现基于时间（TOTP）的二次身份验证（MFA 双重认证）。
+
+149 License：软件授权证书生成与校验，用于给私有化部署的项目设置使用期限和限制硬件绑定。
+
+定时任务、工作流与状态管理 (Tasks, Workflow & State)
+27 quartz：功能强大的任务调度框架，支持复杂 Cron 表达式、持久化任务与集群调度。
+
+36 activiti：轻量级开源工作流引擎（BPMN 2.0），用于实现请假、报销等审批业务流程。
+
+37 async：Spring 提供的 @Async 注解，可轻松将方法变为多线程异步执行，不阻塞主线程。
+
+74 StateMachine：Spring 状态机框架，适用于订单状态转换、支付流程等复杂状态切换的管理。
+
+88 Spring Task Scheduler：Spring 内置的轻量级定时任务工具，只需 @Scheduled 即可搞定基础定时任务。
+
+118 Spring Batch：专为企业级大批量数据处理（如千万级数据导入导出、日终结算）设计的批处理框架。
+
+13 xxl-job：分布式任务调度平台，提供可视化的任务管理、日志查看、失败重试与弹性扩容。
+
+人工智能、深度学习与规则算法 (AI, ML & Algorithms)
+72 AI：结合 Spring AI 框架，帮助 Spring Boot 应用快速对接 OpenAI、ChatGPT 等 AI 大模型服务。
+
+82 Deeplearning4j：Java 原生的开源分布式深度学习库，可用于图像数字识别等 AI 场景。
+
+83 Drools：业务规则引擎，用于将复杂的业务逻辑（如折扣计算、风控规则）从代码中解耦出来。
+
+89 Tensorflow：跨平台的机器学习框架，通过 Java API 接入已训练好的深度学习模型进行图像检测。
+
+94 timefold-solver：运筹学求解器算法库（原 OptaPlanner），用于解决课程表排课、车辆路径规划等复杂排程问题。
+
+109 Qwen1.5-7B-Chat：集成通义千问大语言模型（如通过 Ollama 本地部署 0.5b/7b），实现本地 AI 智能对话功能。
+
+文档、文件处理与媒体工具 (Files, Documents & Media)
+5 minio：开源的分布式对象存储服务，兼容 AWS S3 协议，用于存储海量图片、视频与文档。
+
+14 email：集成邮件服务，用于自动发送验证码、系统通知、告警邮件或邮件报表。
+
+55 qrcode：集成 ZXing 库，用于在 Java 中快速生成与解析二维码图片。
+
+56 easypoi：对 POI 的封装工具，极大地简化了 Excel/Word 文档的导入、导出和模版填充操作。
+
+59 JSch：Java 实现的 SSH2 客户端库，用于在代码中远程连接 Linux 服务器、执行 Shell 命令。
+
+61 fastdfs：轻量级开源分布式文件系统，适合存储大量小文件（图片、短视频）。
+
+64 itextpdf：PDF 文档处理库，用于将 HTML 模板动态渲染并导出为标准的 PDF 文件。
+
+71 poster：海报生成工具（easyposter），用于在后端快速组装图片、文字和二维码生成推广海报。
+
+96 Tika：文档内容提取工具，用于解析各种格式（如 Word、PDF）并将其转换为文本或 HTML。
+
+117 Sftp：通过 SFTP 协议实现安全的文件上传、下载与远程服务器文件交互。
+
+125 Thumbnailator：高质量图片处理库，用于生成缩略图、调整图片尺寸、裁剪以及添加水印。
+
+139 Puppeteer：无头浏览器自动化工具，常用于将复杂的 HTML 页面渲染并截图保存为图片或 PDF。
+
+150 file：基础的文件上传与下载功能实现，包含大文件分片上传与断点续传。
+
+Web 渲染、通信与接口传输 (Web, Network & API)
+18 webSocket：基于 HTTP 的长连接双向通信协议，用于实时聊天、站内信通知和数据推送。
+
+40 https：配置 SSL 证书开启 HTTPS 加密传输，确保网络请求的数据传输安全。
+
+44 freemaker：经典的 Java 模板引擎，用于渲染后端 HTML 页面或动态生成代码/文本。
+
+45 thymeleaf：Spring Boot 官方推荐的现代服务端 HTML5 模板引擎，适合前后端不分离项目。
+
+52 netty：高性能异步事件驱动的网络应用框架，常用于构建低延迟高并发的 WebSocket 或自定义协议服务器。
+
+67 ContentNegotiation：内容协商机制，使同一个接口根据客户端请求头（Accept）自动返回 JSON 或 XML 格式数据。
+
+68 GraphQL：一种用于 API 的查询语言，允许客户端根据需求按需精准请求数据，避免过度获取。
+
+70 webflux：Spring 响应式 Web 框架，基于非阻塞 I/O 模型，能在高并发下保持极低的内存开销。
+
+84 web service：基于 SOAP/XML 的传统 Web 服务（CXF），用于新旧系统间的数据交换。
+
+85 Spring Mobile：帮助 Web 应用检测用户设备类型（手机、平板、桌面），从而返回对应的响应视图。
+
+91 WebRTC：实时音视频通信技术，结合 WebSocket 进行信令传输，实现点对点的音视频通话。
+
+93 Vaadin：允许开发者全套使用 Java 代码编写现代网页前端 UI 界面的 Full-stack 框架。
+
+107 rss：订阅源生成工具，将网站最新内容输出为 RSS 格式，方便用户或阅读器订阅。
+
+108 sse：Server-Sent Events（服务器发送事件），实现服务器向浏览器单向实时推送消息（适合 AI 逐字回答/流式输出）。
+
+143 GZIP：开启服务器响应压缩功能，大幅减少网络传输体积，提高接口加载速度。
+
+144 GZIP (JSON to Redis)：在写入 Redis 前将 JSON 数据使用 GZIP 算法压缩，以极大节省 Redis 内存开销。
+
+145 Cross-Origin：配置 CORS 跨域资源共享，解决前后端分离部署时出现的跨域访问限制问题。
+
+134 tomcat：嵌入式 Web 服务器，演示如何调整其参数配置或将其替换为 Undertow/Jetty 服务器。
+
+自然语言处理、语法分析与文本工具 (NLP, Parsing & Text)
+3 hanlp：面向大众的自然语言处理（NLP）工具包，用于中文分词、词性标注、命名实体识别等。
+
+87 jsoup：HTML 解析器，可用于爬虫提取网页数据，或对前端输入的 HTML 进行安全过滤（防 XSS）。
+
+90 XStream：Java 对象与 XML 数据之间相互转换的高效序列化库。
+
+95 ANTLR：强大的语法分析器生成器，用于解析自定义语言、分析 DSL 语法或进行词法/语法树构建。
+
+97 tablesaw：Java 高性能数据表格和分析库，类似 Python 的 Pandas，用于数据清洗与统计。
+
+105 SpEL：Spring 表达式语言，支持在运行时动态查询和操作对象图，常用于注解中的动态参数解析。
+
+140 opencc4j：简繁体中文转换库，用于实现简体中文与繁体中文之间的互相转换。
+
+开发增强、代码质量与自动化测试 (Dev Tools & Testing)
+30 test：单元测试套件（JUnit 5 + Mockito），用于对 Service/Controller 层编写自动化单元测试。
+
+47 jacoco：Java 代码覆盖率统计工具，用于生成单元测试覆盖率报告，把控代码测试质量。
+
+49 checkstyle：静态代码检查工具，用于强制规范 team 的代码风格（如命名、空格、注释）。
+
+50 Captcha：行为验证码组件（如 AJ-Captcha 滑动拼图、文字点选），用于防止接口被恶意刷取。
+
+51 SpringRetry：Spring 重试机制，当方法抛出特定异常时（如网络抖动），自动按策略尝试重新执行。
+
+53 spring boot starter：自定义 Starter 组件，用于封装通用企业级功能模块，实现即插即用。
+
+57 api-version：API 多版本控制，实现 /api/v1/user 和 /api/v2/user 的平滑升级与版本路由。
+
+75 pf4j：轻量级 Java 插件框架，用于构建模块化、可动态加载/卸载插件的扩展型系统。
+
+78 generate：代码生成工具，用于根据数据库表一键生成 Entity、Mapper、Service 和 Controller 代码。
+
+79 profile multi env：多环境配置管理（dev/test/prod），实现不同部署环境的配置文件自动切换。
+
+98 pmd：静态代码分析工具，用于扫描代码中的潜在 Bug、未使用的变量或性能隐患。
+
+100 Spring Shell：用于快速开发基于控制台（CLI）的命令行交互式应用。
+
+101 Picocli：功能强大的微型 CLI 框架，用于构建带参数解析和彩色输出的命令行工具。
+
+103 testcontainers：基于 Docker 容器的集成测试框架，测试时自动拉取真实的 Mysql/Redis 容器进行真实环境测试。
+
+104 validation：基于 JSR-303 的参数校验框架，使用注解（如 @NotNull, @NotBlank）自动校验前端请求参数。
+
+106 banner：自定义 Spring Boot 启动时在控制台打出的图形 Logo（ASCII Banner）。
+
+113 findbug：静态代码分析工具，用于检测 Java 字节码中潜在的代码缺陷与逻辑漏洞。
+
+114 groovy：集成 Groovy 脚本语言，实现动态脚本解析与运行时业务逻辑热更新。
+
+120 xjar：Spring Boot 包加密工具，用于防止生成的 Jar 包被反编译泄露核心业务代码。
+
+122 mavenplugin：自定义 Maven 插件开发，用于在项目编译、打包过程中插入自定义构建逻辑。
+
+124 springnative：结合 GraalVM 将 Spring Boot 项目直接编译为本地二进制原生镜像（Native Image），实现毫秒级启动和极低内存占用。
+
+126 Resilience4J：轻量级容错库，提供熔断、限流、隔离、重试与速率限制功能。
+
+128 protobuf：Google 结构化数据序列化机制，体积小、速度快，常用于高性能网络传输。
+
+132 Annotation：自定义 Java 注解结合 AOP（切面编程），用于优雅地实现日志拦截、权限校验等通用功能。
+
+136 Devtools：Spring Boot 热部署工具，修改代码或配置文件后自动重启生效，极大提升开发效率。
+
+137 selenium：Web 自动化测试工具，用于模拟真实浏览器操作（点击、输入），实现端到端自动化测试。
+
+141 Exceptions：全局异常处理机制，结合 @RestControllerAdvice 统一捕获异常并返回标准格式的 JSON 结果。
+
+147 Stripe：集成国际知名的 Stripe 支付网关，实现信用卡扣款、订阅打赏等在线支付功能。
+
+地理信息与特殊领域 (GIS & Blockchain)
+86 Blockchain：区块链技术集成，用于实现去中心化账本、智能合约调用或数据防篡改校验。
+
+99 GeoTools：开源的 Java 地理空间（GIS）工具包，用于处理地图数据、矢量分析与地理坐标转换。
+
+112 geodesy：大地测量学计算库，用于精准计算地球表面两点（经纬度）之间的距离与方位角。
 
 
 ### Remark
