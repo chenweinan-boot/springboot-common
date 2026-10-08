@@ -163,6 +163,100 @@ some simple spring boot demos which Contains 170 usage scenarios, the code is re
 | 149           | License               | Spring Boot implements License generation and verification                                    | [CN](http://www.harries.blog/archives/711280.html) / [EN](https://jxausea.medium.com/license) |
 | 150           | file                  | Spring Boot implements file upload and download                                               | [CN](http://www.harries.blog/archives/711291.html) / [EN](https://jxausea.medium.com/file-upload) |
 
+##中文说明
+1. 数据库与数据持久化（Data & Storage）
+用于数据的存储、查询、事务及数据库版本管理。
+
+关系型数据库/ORM：MySQL、JPA、MyBatis-Plus、HANA、TiDB（分布式数据库）。
+
+分库分表与多数据源：Dynamic-Datasource（动态数据源）、Sharding-JDBC（分库分表）。
+
+数据迁移与变更：Flyway、Liquibase（数据库版本控制）、Debezium、Canal（数据变更 CDC 捕获/增量同步）。
+
+图数据库/数据分析：Neo4j（知识图谱/关系图）、StarRocks、Kudu、Impala（大数据/OLAP 查询）。
+
+2. 缓存与分布式内存（Caching & Data Grid）
+用于提升系统并发性能、减少数据库压力以及处理分布式会话。
+
+分布式缓存/内存：Redis（最常用缓存）、Hazelcast、Geode / GemFire、Chronicle Queue（高性能日志队列）。
+
+Session 管理：Spring Session（实现多节点分布式登录状态共享）。
+
+3. 消息中间件与流处理（Messaging & Streaming）
+用于解耦系统、异步处理、流量削峰及实时数据流分析。
+
+消息队列（MQ）：RabbitMQ、RocketMQ、Kafka（日志与大数据流 Processing）。
+
+流式计算/实时处理：Flink（实时大数据分析）。
+
+4. 服务治理、微服务与网关（Microservices & Cloud Native）
+构建微服务架构核心组件。
+
+服务注册/配置中心：Nacos、Zookeeper、Dubbo（RPC 框架）、gRPC、RMI。
+
+限流/熔断/分布式事务：Sentinel（限流降级）、Resilience4J（熔断器）、Seata（分布式事务）。
+
+容器化与云原生：Docker、Kubernetes（K8s API 操作）、Spring Native（结合 GraalVM 编译为原生可执行文件，极速启动）。
+
+5. 安全保障、认证与接口防护（Security & Auth）
+保障系统数据安全、接口防护及权限管控。
+
+安全认证与授权：Spring Security、Shiro、OAuth2、JWT、Google Login（第三方登录）、Google Authenticator（MFA 双因素认证）。
+
+接口与数据安全：HTTPS、Jasypt（配置文件加密）、Mask Data（数据脱敏）、Interface Security（接口签名/防篡改）、License（软件授权证书生成与校验）。
+
+6. 系统监控、日志与运维（Observability & Ops）
+监控系统运行状态、收集日志及分析性能。
+
+日志管理：Logback（输出彩色/格式化日志）、Syslog、Graylog（集中式日志收集）。
+
+指标监控：Prometheus（普罗米修斯指标采集）、Zipkin（链路追踪）。
+
+基准测试：JMH（Java 微基准测试）。
+
+7. 定时任务与工作流（Tasks & Workflow）
+处理周期性任务与复杂的业务流程。
+
+定时任务：Spring Task Scheduler、Quartz、XXL-JOB（分布式任务调度）。
+
+工作流引擎：Activiti（审批/业务流程管理）、StateMachine（状态机管理）。
+
+批处理：Spring Batch（大批量数据批处理）。
+
+8. AI、人工智能与高级计算（AI & ML & Algorithms）
+接入大模型、机器学习、图像识别及智能规划。
+
+大语言模型/AI 接入：Spring AI（快速接入 OpenAI）、Qwen1.5-7B-Chat（集成通义千问等本地/云端大模型）。
+
+机器学习与深度学习：TensorFlow、Deeplearning4j（图像识别/数字识别）。
+
+规则引擎与求解器：Drools（业务规则引擎）、Timefold Solver（智能排课/路径规划算法）。
+
+9. 文档、文件与媒体处理（Files & Media）
+处理文件上传下载、生成各种格式文件。
+
+文件存储与传输：MinIO、FastDFS（分布式文件存储）、SFTP、JSch。
+
+文件/文档生成与解析：EasyPOI（Excel 导入导出）、iTextPDF（HTML 转 PDF）、ZXing/QRCode（二维码生成）、Thumbnailator（图片缩放/水印）、Tika（Word 转 HTML）、Poster/easyposter（海报生成）。
+
+10. Web 开发与通信（Web & Communication）
+前端渲染、长连接通信及 Web 接口交互。
+
+Web 通信/长连接：WebSocket、Netty、SSE（服务器发送事件）、WebRTC（实时音视频通信）。
+
+模板引擎与 UI：Thymeleaf、FreeMarker、Vaadin、Spring Mobile。
+
+API 增强：Swagger（API 文档）、GraphQL、ContentNegotiation（内容协商）、API Version（多版本接口管理）、GZIP（传输压缩）。
+
+11. 实用工具、开发增强与测试（Tools & DevEx）
+提高开发效率、校验数据及自动化测试。
+
+代码规范与校验：Validation（参数校验）、Checkstyle、PMD、FindBug。
+
+测试框架：Unit Test（单元测试）、Testcontainers（测试容器）、JaCoCo（单测覆盖率）、Selenium / Puppeteer（UI 自动化测试与网页截图）。
+
+开发辅助：Devtools（热重载）、Custom Starter（自定义 Spring Boot 启动器）、MapStruct（DTO/Entity 实体映射转换）、SpEL（Spring 表达式语言）、JSoup（HTML 解析）、GeoTools / Geodesy（地理信息与距离计算）。
+
 
 ### Remark
 
